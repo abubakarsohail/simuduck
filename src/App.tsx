@@ -35,6 +35,7 @@ const App = () => {
   return (
     <Box sx={{ marginTop: 1 }}>
       <Container>
+        {/* Select layout */}
         <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
           <TextField
             select
@@ -46,6 +47,7 @@ const App = () => {
           </TextField>
         </Box>
 
+        {/* Actual display of ducks */}
         <Grid container spacing={2}>
           {layout === "grid"
             ? ducks?.map((duck, index) => (
@@ -60,6 +62,7 @@ const App = () => {
               ))}
         </Grid>
 
+        {/* Add new ducks */}
         <Fab
           sx={{ position: "fixed", bottom: 32, right: 32 }}
           size="large"
@@ -69,13 +72,14 @@ const App = () => {
           <Add />
         </Fab>
 
+        {/* Dialog to add new duck */}
         <Dialog open={open} onClose={() => setOpen(false)} fullWidth>
           <DialogTitle>Add New Duck</DialogTitle>
           <DialogContent>
             {/* Select Duck */}
             <TextField
               select
-              defaultValue={duckIndex}
+              value={duckIndex}
               fullWidth
               onChange={({ target }) => setDuckIndex(parseInt(target.value))}
             >

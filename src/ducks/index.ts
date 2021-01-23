@@ -1,3 +1,4 @@
 import MallardDuck from "./MallardDuck";
+import ModelDuck from "./ModelDuck";
 
-export { MallardDuck };
+export { MallardDuck, ModelDuck };
